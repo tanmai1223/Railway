@@ -12,7 +12,7 @@ db();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  // "https://srmproj.netlify.app",
+  "https://uploadformrailway.netlify.app",
 ];
 
 app.use(cors({ origin: allowedOrigins }));
