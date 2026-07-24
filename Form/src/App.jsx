@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import style from "../src/styles/home.module.css";
-import "./app.css";
+import "./App.css";
 import Forms from "./components/Forms";
 import Header from "./components/Header";
 import MainLayout from "./components/Mainlayout";
