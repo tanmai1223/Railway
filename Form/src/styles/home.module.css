@@ -1,0 +1,36 @@
+.appContainer {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Header should already be fixed */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 125px;
+  background: #2b4c7e;
+  z-index: 1000;
+}
+
+/* Main Area */
+
+.content {
+   margin-top: 125px;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 20px;
+    height: calc(100vh - 125px);
+}
+
+.leftPanel {
+    position: sticky;
+    top: 0;
+    align-self: start;
+}
+
+.rightPanel {
+    overflow-y: auto;
+}
