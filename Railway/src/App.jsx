@@ -1,7 +1,7 @@
 import style from "../src/styles/home.module.css";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
-import "./app.css";
+import "./App.css";
 import { useState } from "react";
 import MainLayout from "./components/MainLayout";
 
