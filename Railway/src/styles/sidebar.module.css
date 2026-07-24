@@ -1,0 +1,200 @@
+/* Sidebar Container */
+.sidebar {
+  width: 250px;
+  height: calc(100vh - 150px);
+
+  position: fixed;
+  top: 150px;
+  left: 0;
+
+  padding-top: 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #fff;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, .2);
+
+  overflow-y: auto;
+}
+
+.sidebarMenu {
+  list-style: none;
+  padding: 0 5px;
+  margin: 0;
+}
+
+.menuItem button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  padding: 14px 18px;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  font-size: 18px;
+  text-align: left;
+
+  transition: all .2s ease;
+}
+
+.icon {
+  font-size: 22px;
+  color: #070707;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.active .icon {
+  color: white;
+}
+
+.menuItem button:hover {
+  background: #dfe7f5;
+  color: black;
+}
+
+.menuItem .active {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.05),
+      rgba(255,255,255,.02)
+    ),
+    #163761;
+
+  color: white;
+  border-radius: 12px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+ 
+  margin: 10px 0px;
+}
+
+.searchBox {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #163761;
+  border-radius: 10px;
+  padding: 0 15px;
+  height: 48px;
+  transition: 0.25s;
+}
+
+.searchBox:focus-within {
+  border-color: #1b4d91;
+  box-shadow: 0 0 0 4px rgba(27, 77, 145, 0.12);
+}
+
+.searchIcon {
+  font-size: 18px;
+  color: #7b8794;
+  margin-right: 2px;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: transparent;
+}
+
+.searchInput::placeholder {
+  color: #9aa5b1;
+}
+
+/* ================= Tablet ================= */
+
+@media (max-width: 992px) {
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .menuItem button {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  .icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+}
+
+/* ================= Mobile ================= */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    position: static;
+
+    width: 100%;
+    height: calc(100vh - 150px);
+
+    margin-top: 150px;
+
+    box-shadow: none;
+    border-right: none;
+    border-top: 1px solid #eee;
+
+    padding: 15px;
+  }
+
+  .sidebarMenu {
+    padding: 0;
+  }
+
+  .menuItem {
+    margin-bottom: 12px;
+  }
+
+  .menuItem button {
+    font-size: 17px;
+    padding: 16px 18px;
+
+    border-radius: 12px;
+    background: #f7f8fa;
+  }
+
+  .icon {
+    font-size: 22px;
+    margin-right: 8px;
+  }
+
+ 
+
+}
+
+/* ================= Small Phones ================= */
+
+@media (max-width: 480px) {
+
+  .sidebar {
+    padding: 10px;
+  }
+
+  .menuItem button {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  
+
+
+}

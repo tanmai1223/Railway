@@ -1,0 +1,168 @@
+.ruleCard {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .99), rgba(255, 248, 231, .96));;
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  overflow: hidden;
+   border-top: 10px solid var(--theme);
+  border-radius: 25px;
+}
+
+.ruleCard::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 170px;
+  height: 170px;
+  background: color-mix(in srgb, var(--theme) 25%, white);
+  border-radius: 50%;
+}
+
+.topCircle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--theme) 20%, white);
+  color: var(--theme);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.cardIcon {
+  font-size: 45px;
+}
+
+.ruleCard h1 {
+  font-size: 40px;
+  margin: 10px 0 5px;
+}
+
+.ruleCard h3 {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.ruleCard ul {
+  padding-left: 20px;
+}
+
+.ruleCard li {
+  margin-bottom: 12px;
+}
+
+.ruleCard li::marker {
+  color: var(--theme);
+}
+
+.divider {
+  border-top: 1px dashed #ccc;
+  margin: 25px 0;
+}
+
+.cardFooter{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.cardFooter a{
+  text-decoration:none;
+  color:#2458d3;
+  font-weight:700;
+  font-size:18px;
+}
+
+.cardFooter button{
+  width:46px;
+  height:46px;
+  border:none;
+  border-radius:50%;
+  background:#3b82f6;
+  color:#fff;
+  cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 8px 18px rgba(59,130,246,.35);
+}
+
+.cardFooter button:hover{
+  transform:scale(1.08);
+}
+
+@media (max-width: 768px) {
+
+  .ruleCard {
+    padding: 18px;
+    border-top-width: 8px;
+    border-radius: 18px;
+  }
+
+  .ruleCard::before {
+    width: 120px;
+    height: 120px;
+    top: -50px;
+    right: -50px;
+  }
+
+  .cardIcon {
+    font-size: 34px;
+  }
+
+  .ruleCard h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .ruleCard h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .ruleCard ul {
+    padding-left: 18px;
+  }
+
+  .ruleCard li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .divider {
+    margin: 18px 0;
+  }
+
+  .topCircle {
+    width: 34px;
+    height: 34px;
+    top: 15px;
+    right: 15px;
+    font-size: 14px;
+  }
+
+  .cardFooter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .cardFooter a {
+    font-size: 15px;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .cardFooter button {
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    justify-content: center;
+  }
+}
