@@ -141,9 +141,9 @@
     position: static;
 
     width: 100%;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 170px);
 
-    margin-top: 190px;
+    margin-top: 170px;
 
     box-shadow: none;
     border-right: none;
