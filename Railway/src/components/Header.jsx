@@ -15,14 +15,10 @@ function Header() {
 
           <div className={styles.textSection}>
             <div className={styles.topRow}>
-              <h1>Zonal Railway Training Institute</h1>
-
-              <button className={styles.badge}>
-                Interactive Railway Display Board
-              </button>
+              <h1>Zonal Railway Training Institute MLY</h1>
             </div>
 
-            <h2>Railway Rules & Operating Documents</h2>
+            <h2>SMART - Study Material And Railway Training</h2>
           </div>
 
         </div>
