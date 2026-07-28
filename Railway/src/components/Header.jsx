@@ -15,10 +15,10 @@ function Header() {
 
           <div className={styles.textSection}>
             <div className={styles.topRow}>
-              <h1>Zonal Railway Training Institute MLY</h1>
+              <h1>SMART - Study Material And Railway Training</h1>
             </div>
 
-            <h2>SMART - Study Material And Railway Training</h2>
+            <h2>Zonal Railway Training Institute MLY</h2>
           </div>
 
         </div>
