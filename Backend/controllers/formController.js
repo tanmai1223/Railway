@@ -30,19 +30,23 @@ export const addPDF = async (req, res) => {
 
     // Convert paragraph into points
     const summaryPoints = summary
-  .split(".")
-  .map((point) => point.trim())
-  .filter((point) => point.length > 0)
-  .map((point) => point + ".");
-  
+      .split(".")
+      .map((point) => point.trim())
+      .filter((point) => point.length > 0)
+      .map((point) => point + ".");
+
+    const lastDocument = await Form.findOne({ group }).sort({ order: -1 });
+
+    const nextOrder = lastDocument ? lastDocument.order + 1 : 1;
+
     const form = await Form.create({
       title,
       group,
       color,
       summary: summaryPoints,
       googleDriveUrl,
+      order: nextOrder,
     });
-
     return res.status(201).json({
       success: true,
       message: "Document added successfully.",
@@ -60,8 +64,7 @@ export const addPDF = async (req, res) => {
 
 export const getPDFs = async (req, res) => {
   try {
-    const forms = await Form.find().sort({ createdAt: -1 });
-
+    const forms = await Form.find().sort({ order: 1 });
     return res.status(200).json({
       success: true,
       count: forms.length,
@@ -163,8 +166,7 @@ export const getFormsByGroup = async (req, res) => {
   try {
     const { group } = req.params;
 
-    const forms = await Form.find({ group }).sort({ createdAt: -1 });
-
+    const forms = await Form.find({ group }).sort({ order: 1 });
     return res.status(200).json({
       success: true,
       count: forms.length,
@@ -172,6 +174,29 @@ export const getFormsByGroup = async (req, res) => {
     });
   } catch (error) {
     return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const updateOrder = async (req, res) => {
+  try {
+    const { items } = req.body;
+
+    for (const item of items) {
+      await Form.findByIdAndUpdate(item._id, {
+        order: item.order,
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Order updated successfully",
+    });
+
+  } catch (error) {
+    res.status(500).json({
       success: false,
       message: error.message,
     });

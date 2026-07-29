@@ -32,6 +32,22 @@
   border: 1px solid #d5b45d;
 }
 
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.titleContainer h1,
+.titleContainer h2 {
+  margin: 0;
+}
+
+.titleContainer h2 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
 /* Logo */
 .logo {
   width: 90px;
@@ -85,6 +101,22 @@
     height: 55px;
   }
 
+  .titleContainer {
+    flex-direction: column;
+    align-items: flex-start;
+   gap: 2px;
+  }
+
+  .titleContainer h1 {
+    font-size: 30px;
+  }
+
+  .titleContainer h2 {
+    font-size: 18px;
+    
+  }
+
+
   .textSection {
     width: 100%;
   }
@@ -105,8 +137,7 @@
   }
 
   .card h2 {
-    margin-top: 8px;
-    font-size: 18px;
-    line-height: 1.4;
+   font-size: 18px;
+    margin: 0;
   }
 }

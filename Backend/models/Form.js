@@ -30,6 +30,12 @@ const FormSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+
+    // New field for drag & drop ordering
+    order: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,

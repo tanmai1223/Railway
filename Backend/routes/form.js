@@ -5,6 +5,7 @@ import {
   getFormsByGroup,
   getGroups,
   getPDFs,
+  updateOrder,
   updatePDF,
 } from "../controllers/formController.js";
 const router = Router();
@@ -12,6 +13,7 @@ const router = Router();
 router.post("/upload", addPDF);
 router.get("/get", getPDFs);
 router.get("/getgroups", getGroups);
+router.put("/updateOrder",updateOrder);
 router.get("/group/:group",getFormsByGroup);
 router.delete("/delete/:id", deletePDF);
 router.patch("/update/:id",  updatePDF);

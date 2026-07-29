@@ -13,6 +13,24 @@
   z-index: 1000;
 }
 
+.titleContainer {
+  display: flex;
+  align-items: baseline; /* aligns the text nicely */
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.titleContainer h1,
+.titleContainer h2 {
+  margin: 0;
+}
+
+.titleContainer h2 {
+  font-size: 20px; /* adjust as needed */
+  font-weight: 400;
+  margin-bottom: 12px !important;
+}
+
 /* Whole header */
 .headerContent {
   display: flex;

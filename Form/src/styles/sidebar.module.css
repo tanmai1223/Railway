@@ -5,7 +5,7 @@
 
   position: fixed;
   top: 150px;
-  left: 0;
+  left: 350px;
 
   padding-top: 15px;
 
@@ -141,9 +141,9 @@
     position: static;
 
     width: 100%;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 170px);
 
-    margin-top: 150px;
+    margin-top: 170px;
 
     box-shadow: none;
     border-right: none;

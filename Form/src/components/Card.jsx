@@ -1,20 +1,41 @@
 import style from "../styles/card.module.css";
 import EditModal from "./EditModal";
 import { useState } from "react";
-
 import { ExternalLink } from "lucide-react";
 
-function Cards({ data }) {
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+
+function Card({ data, onSuccess }) {
   const [showModal, setShowModal] = useState(false);
+
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+  } = useSortable({
+    id: data._id,
+  });
+
+  const dragStyle = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
 
   return (
     <>
       <div
-        className={style.ruleCard}
+        ref={setNodeRef}
         style={{
+          ...dragStyle,
           "--theme": data.color,
         }}
+        className={style.ruleCard}
         onDoubleClick={() => setShowModal(true)}
+        {...attributes}
+        {...listeners}
       >
         <div className={style.cardIcon}></div>
 
@@ -53,13 +74,13 @@ function Cards({ data }) {
 
       {showModal && (
         <EditModal
-          data={data}
-          onClose={() => setShowModal(false)}
-          onSuccess={() => window.location.reload()}
-        />
+  data={data}
+  onClose={() => setShowModal(false)}
+  onSuccess={onSuccess}
+/>
       )}
     </>
   );
 }
 
-export default Cards;
+export default Card;

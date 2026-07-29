@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function Forms({ setCards })  {
+function Forms({ setCards,onSuccess,setSelectedGroup })  {
   const [formData, setFormData] = useState({
     title: "",
     group: "",
@@ -35,6 +35,11 @@ function Forms({ setCards })  {
     setCards((prev) => [res.data.data, ...prev]);
 
     toast.success("Document added successfully!");
+
+    onSuccess();
+
+    setSelectedGroup(formData.group);
+
 
     setFormData({
       title: "",
